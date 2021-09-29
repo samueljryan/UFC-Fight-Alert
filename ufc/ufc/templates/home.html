@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UFC Fight Alert</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        div.middle {
+            text-align: center;
+        }
+
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="middle">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+
+    <h1><u>UFC Fight Alert</u></h1>
+    <p>Select fight for email alert from upcoming UFC event </p>
+    <h2>{{event_name}}</h2>
+    <h3>Date: {{ date }}</h3>
+
+    <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="collapse"
+        data-target="#demo">{{fight1}}</button>
+    <div id="demo" class="collapse">
+        <form METHOD="POST">
+            <input type="checkbox" id="fight_1" name="fight" value={{fight1}} required>
+            <label for="fight"> {{fight1}} </label>
+            <br>
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email" required maxlength="45">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="collapse"
+        data-target="#demo1">{{fight2}}</button>
+    <div id="demo1" class="collapse">
+        <form METHOD="POST">
+            <input type="checkbox" id="fight_2" name="fight" value={{fight2}} required>
+            <label for="fight_2"> {{fight2}} </label>
+            <br>
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email" required maxlength="45">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="collapse"
+        data-target="#demo2">{{fight3}}</button>
+    <div id="demo2" class="collapse">
+        <form METHOD="POST">
+            <input type="checkbox" id="fight_3" name="fight" value={{fight3}} required>
+            <label for="fight_3"> {{fight3}} </label>
+            <br>
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email" required maxlength="45">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="collapse"
+        data-target="#demo3">{{fight4}}</button>
+    <div id="demo3" class="collapse">
+        <form METHOD="POST">
+            <input type="checkbox" id="fight_4" name="fight" value={{fight4}} required>
+            <label for="fight_4"> {{fight4}} </label>
+            <br>
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email" required maxlength="45">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+
+    <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="collapse"
+        data-target="#demo4">{{fight5}}</button>
+    <div id="demo4" class="collapse">
+        <form METHOD="POST">
+            <input type="checkbox" id="fight_5" name="fight" value={{fight5}} required>
+            <label for="fight_5"> {{fight5}} </label>
+            <br>
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email" required maxlength="45">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+</body>
+
+</html>
